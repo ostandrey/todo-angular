@@ -1,0 +1,23 @@
+.card {
+  width: 95%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  animation-name: card;
+  animation-duration: 1s;
+  animation-timing-function: ease-out;
+}
+
+
+@keyframes card {
+  0% {
+    bottom: 20px;
+    opacity: 0;
+  }
+  100% {
+    bottom: 0;
+    opacity: 100%;
+  }
+}
+
+

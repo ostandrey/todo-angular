@@ -1,0 +1,20 @@
+.todo-input {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.input-area {
+  width: 82%;
+}
+
+#btn-input {
+  width: 15%;
+  margin-top: 3px;
+  margin-bottom: 23px;
+}
+
+#btn-input:hover {
+  background-color: #348bbf;
+  color: white;
+}

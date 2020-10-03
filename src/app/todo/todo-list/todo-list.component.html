@@ -1,0 +1,25 @@
+<div class="todo-sorting">
+  <div class="ordering">
+    <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
+      <mat-button-toggle class="btn-ordering" value="active">Active</mat-button-toggle>
+      <mat-button-toggle class="btn-ordering" value="done">Done</mat-button-toggle>
+      <mat-button-toggle class="btn-ordering" value="all">All</mat-button-toggle>
+    </mat-button-toggle-group>
+  </div>
+
+  <div class="sorting">
+    <button mat-stroked-button [matMenuTriggerFor]="beforeMenu" id="btn-sort">Sorting by ...</button>
+    <mat-menu #beforeMenu="matMenu" xPosition="before">
+      <button mat-menu-item>Name</button>
+      <mat-divider></mat-divider>
+      <button mat-menu-item>Date</button>
+    </mat-menu>
+  </div>
+</div>
+
+<div class="todo-list">
+  <mat-divider></mat-divider>
+  <mat-selection-list #shoes id="selection-list">
+    <app-todo-item></app-todo-item>
+  </mat-selection-list>
+</div>

@@ -1,0 +1,24 @@
+.todo-sorting {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+#btn-sort {
+  height: 100%;
+}
+
+#btn-sort:hover {
+  background-color: #348bbf;
+  color: white;
+}
+
+.btn-ordering:hover {
+  background-color: #348bbf;
+  color: white;
+}
+
+#todo-list {
+  padding-top: 0;
+}

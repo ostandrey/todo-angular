@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  selector: 'app-todo-item',
+  templateUrl: './todo-item.component.html',
+  styleUrls: ['./todo-item.component.scss']
 })
-export class CardComponent{
+export class TodoItemComponent {
+
   typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
+
 }
