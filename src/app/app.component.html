@@ -6,44 +6,6 @@
     <div id="heading">
       <h1>Hi! It`s ToDoList</h1>
     </div>
-    <div class="card">
-      <mat-card class="card">
-        <div class="section-input">
-          <mat-form-field appearance="outline" class="input-area">
-            <mat-label>Enter the task</mat-label>
-            <input matInput>
-          </mat-form-field>
-          <button mat-raised-button id="btn-input">Add</button>
-        </div>
-        <div class="section-sorting">
-          <div class="ordering">
-            <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-              <mat-button-toggle class="btn-ordering" value="active">Active</mat-button-toggle>
-              <mat-button-toggle class="btn-ordering" value="done">Done</mat-button-toggle>
-              <mat-button-toggle class="btn-ordering" value="all">All</mat-button-toggle>
-            </mat-button-toggle-group>
-          </div>
-
-          <div class="sorting">
-            <button mat-stroked-button [matMenuTriggerFor]="beforeMenu" id="btn-sort">Sorting by ...</button>
-            <mat-menu #beforeMenu="matMenu" xPosition="before">
-              <button mat-menu-item>Name</button>
-              <mat-divider></mat-divider>
-              <button mat-menu-item>Date</button>
-            </mat-menu>
-          </div>
-        </div>
-
-        <div class="section-list">
-          <mat-divider></mat-divider>
-          <mat-selection-list #shoes id="selection-list">
-            <mat-list-option *ngFor="let shoe of typesOfShoes">
-              {{shoe}}
-              <mat-divider></mat-divider>
-            </mat-list-option>
-          </mat-selection-list>
-        </div>
-      </mat-card>
-    </div>
+    <app-card></app-card>
   </section>
 </main>
