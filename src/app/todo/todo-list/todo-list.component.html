@@ -19,7 +19,7 @@
 
 <div class="todo-list">
   <mat-divider></mat-divider>
-  <mat-selection-list #shoes id="selection-list">
-    <app-todo-item></app-todo-item>
+  <mat-selection-list id="selection-list" *ngFor="let todo of todos">
+    <app-todo-item [todo] = todo></app-todo-item>
   </mat-selection-list>
 </div>
