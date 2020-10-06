@@ -1,7 +1,7 @@
 <div class="todo-input">
   <mat-form-field appearance="outline" class="input-area">
     <mat-label>Enter the task</mat-label>
-    <input matInput>
+    <input matInput [(ngModel)]="newTodo" type="text" value="">
   </mat-form-field>
-  <button mat-raised-button id="btn-input">Add</button>
+  <button mat-raised-button id="btn-input" (click)="addTodo()">Add</button>
 </div>

@@ -12,6 +12,7 @@ import {MatInputModule} from '@angular/material/input';
 import { TodoInputComponent } from './todo-input/todo-input.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -29,7 +30,8 @@ import { TodoItemComponent } from './todo-item/todo-item.component';
     MatMenuModule,
     MatDividerModule,
     MatListModule,
-    MatInputModule
+    MatInputModule,
+    FormsModule
   ]
 })
 export class TodoModule { }
