@@ -1,4 +1,5 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {TodoService} from '../todo.service';
 
 interface ITodo {
   id: number;
@@ -12,13 +13,16 @@ interface ITodo {
   styleUrls: ['./todo-item.component.scss']
 })
 
-export class TodoItemComponent implements OnInit{
+export class TodoItemComponent {
 
   @Input() todo: ITodo;
 
-  constructor() {
+  constructor(
+    private todoService: TodoService
+  ) {
   }
 
-  ngOnInit(): void {
+  deleteTodo(): void {
+    this.todoService.deleteTodo(this.todo.id);
   }
 }

@@ -1,4 +1,16 @@
-<mat-list-option>
-  {{todo.name}}
+<mat-list>
+  <div class="item">
+    <mat-list-item>
+      {{todo.name}}
+    </mat-list-item>
+    <div>
+      <button mat-stroked-button
+              color="warn"
+              id="btn-delete"
+              (click)="deleteTodo()">
+        Delete
+      </button>
+    </div>
+  </div>
   <mat-divider></mat-divider>
-</mat-list-option>
+</mat-list>
