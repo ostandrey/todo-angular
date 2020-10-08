@@ -4,12 +4,26 @@
       {{todo.name}}
     </mat-list-item>
     <div>
-      <button mat-stroked-button
-              color="warn"
-              id="btn-delete"
-              (click)="deleteTodo()">
-        Delete
-      </button>
+      <mat-checkbox class="checkbox"
+                    id="check-active"
+                    value="{{todo.id}}"
+                    (change)="changeTodoStatus($event.source)"
+      ></mat-checkbox>
+    </div>
+    <div>
+      <div *ngIf="!todo.isDone" style="color: #2dba75;">
+        Active
+      </div>
+      <div *ngIf="todo.isDone" style="color: #f14c52;">
+        Done
+      </div>
+    </div>
+    <div>
+      <mat-icon id="btn-delete" (click)="deleteTodo()">
+          <span class="material-icons">
+            delete
+          </span>
+    </mat-icon>
     </div>
   </div>
   <mat-divider></mat-divider>

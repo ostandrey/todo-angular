@@ -4,6 +4,7 @@ import {ITodo} from './todo.interface';
 
 const todoItemsList: ITodo[] = [];
 let todoIdCounter = 0;
+let isDone = false;
 
 @Injectable({
   providedIn: 'root'
@@ -19,10 +20,11 @@ export class TodoService {
     const todoItem = {
       id: todoIdCounter,
       name: newTodo,
-      isDone: false
+      isDone
     };
     todoItemsList.push(todoItem);
     this._todoItems.next(todoItemsList);
+    console.log(todoItemsList);
     todoIdCounter++;
   }
 
@@ -31,6 +33,14 @@ export class TodoService {
       return todo.id === id;
     });
     todoItemsList.splice(indexTodo, 1);
+    this._todoItems.next(todoItemsList);
+  }
+
+  updateTodo(id: number, status: boolean): void {
+    const indexTodo = todoItemsList.findIndex((todo: ITodo) => {
+      return todo.id === id;
+    });
+    todoItemsList[indexTodo].isDone = status;
     this._todoItems.next(todoItemsList);
   }
 }

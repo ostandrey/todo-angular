@@ -13,6 +13,8 @@ import { TodoInputComponent } from './todo-input/todo-input.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { TodoItemComponent } from './todo-item/todo-item.component';
 import {FormsModule} from '@angular/forms';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 
 
 
@@ -31,7 +33,9 @@ import {FormsModule} from '@angular/forms';
     MatDividerModule,
     MatListModule,
     MatInputModule,
-    FormsModule
+    FormsModule,
+    MatIconModule,
+    MatCheckboxModule
   ]
 })
 export class TodoModule { }

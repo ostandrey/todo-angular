@@ -3,3 +3,13 @@
   align-items: center;
 }
 
+#btn-delete {
+  color: #f14c52;
+  cursor: pointer;
+  margin-left: 5px;
+  border-radius: 5px;
+}
+
+#btn-delete:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}

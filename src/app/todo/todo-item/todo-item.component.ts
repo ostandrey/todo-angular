@@ -4,7 +4,7 @@ import {TodoService} from '../todo.service';
 interface ITodo {
   id: number;
   name: string;
-  condition: boolean;
+  isDone: boolean;
 }
 
 @Component({
@@ -19,10 +19,14 @@ export class TodoItemComponent {
 
   constructor(
     private todoService: TodoService
-  ) {
-  }
+  ) { }
 
   deleteTodo(): void {
     this.todoService.deleteTodo(this.todo.id);
+  }
+
+  changeTodoStatus(event): void {
+    console.log(event);
+    // this.todoService.updateTodo(id, status);
   }
 }
