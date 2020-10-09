@@ -43,4 +43,23 @@ export class TodoService {
     todoItemsList[indexTodo].isDone = status;
     this._todoItems.next(todoItemsList);
   }
+
+  returnAllTodos(): void {
+    this._todoItems.next(todoItemsList);
+  }
+
+  returnActiveTodos(): void {
+    const activeTodos = todoItemsList.filter((todo: ITodo) => {
+      return !todo.isDone;
+    });
+    this._todoItems.next(activeTodos);
+  }
+
+  returnDoneTodos(): void {
+    const doneTodos = todoItemsList.filter((todo: ITodo) => {
+      return todo.isDone;
+    });
+
+    this._todoItems.next(doneTodos);
+  }
 }

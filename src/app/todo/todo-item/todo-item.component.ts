@@ -25,8 +25,7 @@ export class TodoItemComponent {
     this.todoService.deleteTodo(this.todo.id);
   }
 
-  changeTodoStatus(event): void {
-    console.log(event);
-    // this.todoService.updateTodo(id, status);
+  changeTodoStatus(id, status): void {
+    this.todoService.updateTodo(id, status);
   }
 }

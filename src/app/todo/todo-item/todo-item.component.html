@@ -7,7 +7,8 @@
       <mat-checkbox class="checkbox"
                     id="check-active"
                     value="{{todo.id}}"
-                    (change)="changeTodoStatus($event.source)"
+                    checked ="{{todo.isDone}}"
+                    (change)="changeTodoStatus(todo.id, $event.checked)"
       ></mat-checkbox>
     </div>
     <div>

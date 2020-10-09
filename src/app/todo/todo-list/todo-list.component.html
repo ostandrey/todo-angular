@@ -1,9 +1,9 @@
 <div class="todo-sorting">
   <div class="ordering">
     <mat-button-toggle-group name="fontStyle" aria-label="Font Style">
-      <mat-button-toggle class="btn-ordering" value="active">Active</mat-button-toggle>
-      <mat-button-toggle class="btn-ordering" value="done">Done</mat-button-toggle>
-      <mat-button-toggle class="btn-ordering" value="all">All</mat-button-toggle>
+      <mat-button-toggle class="btn-ordering" value="active" (click)="returnActiveTodos()">Active</mat-button-toggle>
+      <mat-button-toggle class="btn-ordering" value="done" (click)="returnDoneTodos()">Done</mat-button-toggle>
+      <mat-button-toggle class="btn-ordering" value="all" (click)="returnAllTodos()">All</mat-button-toggle>
     </mat-button-toggle-group>
   </div>
 
