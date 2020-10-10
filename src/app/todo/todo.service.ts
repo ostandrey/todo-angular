@@ -44,22 +44,20 @@ export class TodoService {
     this._todoItems.next(todoItemsList);
   }
 
-  returnAllTodos(): void {
-    this._todoItems.next(todoItemsList);
-  }
-
-  returnActiveTodos(): void {
-    const activeTodos = todoItemsList.filter((todo: ITodo) => {
-      return !todo.isDone;
-    });
-    this._todoItems.next(activeTodos);
-  }
-
-  returnDoneTodos(): void {
-    const doneTodos = todoItemsList.filter((todo: ITodo) => {
-      return todo.isDone;
-    });
-
-    this._todoItems.next(doneTodos);
+  returnTodoItems(value: string): void {
+    if (value === 'all') {
+      this._todoItems.next(todoItemsList);
+    } else if (value === 'active') {
+      const activeTodos = todoItemsList.filter((todo: ITodo) => {
+        return !todo.isDone;
+      });
+      this._todoItems.next(activeTodos);
+    }
+    else if (value === 'done') {
+      const doneTodos = todoItemsList.filter((todo: ITodo) => {
+        return todo.isDone;
+      });
+      this._todoItems.next(doneTodos);
+    }
   }
 }

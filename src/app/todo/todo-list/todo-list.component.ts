@@ -20,15 +20,9 @@ export class TodoListComponent implements OnInit{
     this.todos$ = this.todoService.todoItems;
   }
 
-  returnAllTodos(): void {
-    this.todoService.returnAllTodos();
-  }
+  returnTodoItems(value): void {
+    this.todoService.returnTodoItems(value);
+    console.log(value);
 
-  returnActiveTodos(): void {
-    this.todoService.returnActiveTodos();
-  }
-
-  returnDoneTodos(): void {
-    this.todoService.returnDoneTodos();
   }
 }
