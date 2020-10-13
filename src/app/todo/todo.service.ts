@@ -4,7 +4,6 @@ import {ITodo} from './todo.interface';
 
 const todoItemsList: ITodo[] = [];
 let todoIdCounter = 0;
-let isDone = false;
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +19,7 @@ export class TodoService {
     const todoItem = {
       id: todoIdCounter,
       name: newTodo,
-      isDone
+      isDone: false
     };
     todoItemsList.push(todoItem);
     this._todoItems.next(todoItemsList);
@@ -45,19 +44,40 @@ export class TodoService {
   }
 
   returnTodoItems(value: string): void {
-    if (value === 'all') {
-      this._todoItems.next(todoItemsList);
-    } else if (value === 'active') {
-      const activeTodos = todoItemsList.filter((todo: ITodo) => {
-        return !todo.isDone;
-      });
-      this._todoItems.next(activeTodos);
+    switch (value) {
+      case 'active':
+        const activeTodos = todoItemsList.filter((todo: ITodo) => {
+          return !todo.isDone;
+        });
+        this._todoItems.next(activeTodos);
+        break;
+      case 'done':
+        const doneTodos = todoItemsList.filter((todo: ITodo) => {
+          return todo.isDone;
+        });
+        this._todoItems.next(doneTodos);
+        break;
+      default:
+        this._todoItems.next(todoItemsList);
     }
-    else if (value === 'done') {
-      const doneTodos = todoItemsList.filter((todo: ITodo) => {
-        return todo.isDone;
+  }
+
+  returnSortingTodoItems(value: string): void {
+    if (value === 'descending') {
+      const descendingTodos = todoItemsList.sort((a: ITodo , b: ITodo) => {
+        if (a.name < b.name) {
+          return 1;
+        }
       });
-      this._todoItems.next(doneTodos);
+      this._todoItems.next(descendingTodos);
+    }
+    if (value === 'ascending') {
+      const ascendingTodos = todoItemsList.sort((a: ITodo , b: ITodo) => {
+        if (a.name > b.name) {
+          return 1;
+        }
+      });
+      this._todoItems.next(ascendingTodos);
     }
   }
 }

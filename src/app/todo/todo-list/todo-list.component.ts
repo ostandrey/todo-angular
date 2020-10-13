@@ -22,7 +22,10 @@ export class TodoListComponent implements OnInit{
 
   returnTodoItems(value): void {
     this.todoService.returnTodoItems(value);
-    console.log(value);
+  }
 
+  returnSortingTodoItems(value): void {
+    this.todoService.returnSortingTodoItems(value);
+    // console.log(value);
   }
 }

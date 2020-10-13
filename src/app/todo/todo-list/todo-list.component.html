@@ -10,9 +10,10 @@
   <div class="sorting">
     <button mat-stroked-button [matMenuTriggerFor]="beforeMenu" id="btn-sort">Sorting by ...</button>
     <mat-menu #beforeMenu="matMenu" xPosition="before">
-      <button mat-menu-item>Name</button>
+      <button mat-menu-item value="addition" (click)="returnSortingTodoItems('addition')">Addition</button>
       <mat-divider></mat-divider>
-      <button mat-menu-item>Date</button>
+      <button mat-menu-item value="descending" (click)="returnSortingTodoItems('descending')">Descending</button>
+      <button mat-menu-item value="ascending" (click)="returnSortingTodoItems('ascending')">Ascending</button>
     </mat-menu>
   </div>
 </div>
